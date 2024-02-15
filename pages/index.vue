@@ -5,13 +5,14 @@
 </template>
 
 <script setup lang="ts">
-import CalculatorForm from '../components/organisms/CalculatorForm.vue';
+import CalculatorForm from '../components/templates/CalculatorForm.vue';
 
 </script>
 
 <style scoped>
 .container {
-    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
     background-color: rgba(var(--v-theme-background));
     height: 200vh;
 }
