@@ -1,11 +1,11 @@
 <template>
     <div class="container">
-        <h1>Mainb</h1>
-        <Form />
+        <CalculatorForm />
     </div>
 </template>
 
 <script setup lang="ts">
+import CalculatorForm from '../components/organisms/CalculatorForm.vue';
 
 </script>
 
