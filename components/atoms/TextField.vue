@@ -1,5 +1,5 @@
 <template>
-  <input :type="type" :placeholder="placeholder" :class="class" />
+  <input :type="type" :placeholder="placeholder" />
 </template>
 
 <script setup lang="ts">
@@ -12,10 +12,6 @@ defineProps({
     type: String,
     default: ""
   },
-  class: {
-    type: Object,
-    default: {}
-  }
 })
 
 </script>
