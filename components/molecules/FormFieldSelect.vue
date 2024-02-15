@@ -3,7 +3,8 @@
   <div class="form-field-select">
     <Label class="form-field-select__label" v-bind="$attrs" />
     <div class="form-field-select-part__input">
-      <TextField class="form-field-select__input" v-bind="$attrs" />
+      <TextField class="form-field-select__input" v-bind="$attrs" :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)" />
       <Select v-bind="$attrs" class="form-field-select-select__input" />
     </div>
   </div>
@@ -13,6 +14,13 @@
 import TextField from '../atoms/TextField.vue';
 import Label from '../atoms/Label.vue';
 import Select from '../atoms/Select.vue'
+
+defineProps({
+  modelValue: {
+    type: [Number, String],
+    defaul: ""
+  },
+})
 </script>
 
 <style scoped lang="scss">

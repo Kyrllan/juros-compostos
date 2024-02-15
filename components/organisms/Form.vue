@@ -1,12 +1,14 @@
 <template>
   <div class="form">
-    <FormField label="Valor inicial" type="number" />
-    <FormField label="Valor mensal" type="number" />
-    <FormFieldSelect label="Taxa de Juros" :items="juros" />
-    <FormFieldSelect type="number" label="Período em" :items="periodo" />
+    <FormField label="Valor inicial" type="number" v-model="form.initialValue" />
+    <FormField label="Valor mensal" type="number" v-model="form.monthlyValue" />
+    <FormFieldSelect label="Taxa de Juros" type="number" :items="juros" v-model="form.interestRate" />
+    <FormFieldSelect label="Período em" type="number" :items="periodo" v-model="form.period" />
     <Button class="form-button" color="rgb(var(--v-theme-primary))" label="Limpar" @click="$emit('clean')" v-ripple />
-    <Button class="form-button" color="rgb(var(--v-theme-tertiary))" label="Calcular" @click="$emit('calculate')"
+    <Button class="form-button" color="rgb(var(--v-theme-tertiary))" label="Calcular" @click="$emit('calculate', form)"
       v-ripple />
+
+    {{ form }}
   </div>
 </template>
 
@@ -14,6 +16,14 @@
 import FormField from '../molecules/FormField.vue';
 import FormFieldSelect from '../molecules/FormFieldSelect.vue';
 import Button from '../atoms/Button.vue';
+import { reactive } from 'vue';
+
+const form = reactive({
+  initialValue: "",
+  monthlyValue: "",
+  interestRate: "",
+  period: "",
+})
 
 const juros = [
   { value: "anual", label: "Anual" },
