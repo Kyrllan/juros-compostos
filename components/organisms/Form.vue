@@ -1,9 +1,9 @@
 <template>
   <div class="form">
-    <FormField label="Valor inicial" type="number" v-model="form.initialValue" />
-    <FormField label="Valor mensal" type="number" v-model="form.monthlyValue" />
-    <FormFieldSelect label="Taxa de Juros" type="number" :items="juros" v-model="form.interestRate" />
-    <FormFieldSelect label="Período em" type="number" :items="periodo" v-model="form.period" />
+    <FormField label="Valor inicial" type="number" v-model.lazy="form.initialValue" />
+    <FormField label="Valor mensal" type="number" v-model.lazy="form.monthlyValue" />
+    <FormFieldSelect label="Taxa de Juros" type="number" :items="juros" v-model.lazy="form.interestRate" />
+    <FormFieldSelect label="Período em" type="number" :items="periodo" v-model.lazy="form.period" />
     <Button class="form-button" color="rgb(var(--v-theme-primary))" label="Limpar" @click="$emit('clean')" v-ripple />
     <Button class="form-button" color="rgb(var(--v-theme-tertiary))" label="Calcular" @click="$emit('calculate', form)"
       v-ripple />

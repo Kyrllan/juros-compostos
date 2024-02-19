@@ -42,7 +42,8 @@ defineProps({
 
     .form-field-select-select__input {
       width: 25%;
-      border-radius: 0;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
       background-color: rgb(var(--v-theme-tertiary));
       outline: none;
     }

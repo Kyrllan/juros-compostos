@@ -14,6 +14,6 @@ import CalculatorForm from '../components/templates/CalculatorForm.vue';
     display: flex;
     justify-content: center;
     background-color: rgba(var(--v-theme-background));
-    height: 200vh;
+    height: 100vh;
 }
 </style>

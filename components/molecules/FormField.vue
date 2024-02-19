@@ -26,7 +26,7 @@ defineProps({
     flex-direction: column;
 
     .form-field__input {
-        border-radius: 0;
+        border-radius: 2px;
         padding: 0.4rem;
         background-color: rgb(var(--v-theme-secondary));
 
